@@ -1,6 +1,10 @@
+const utilities = require('../utilities/utilities')
+
 const login = (req, res) => {
     if(req.body.username == 'user' && req.body.password == 'pass') {
-        res.status(200).send("Success");
+        utilities.generateToken({user: req.body.username}, (token) => {
+            res.status(200).json(token); 
+        })
     } else {
         res.status(401).send("Not Authorized"); 
     }

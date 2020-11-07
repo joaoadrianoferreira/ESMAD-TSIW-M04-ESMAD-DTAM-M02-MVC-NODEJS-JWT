@@ -1,4 +1,4 @@
-const student = require("./model"); 
+const student = require("../models/model_students"); 
 
 const create = (req, res) => {
 

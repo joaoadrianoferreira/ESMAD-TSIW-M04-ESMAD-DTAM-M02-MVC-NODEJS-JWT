@@ -1,9 +1,10 @@
+require('dotenv').config(); 
 const express = require('express')
 const mongoose = require('mongoose');
 const app = express();
 const port = 3000;
-const users = require('./users/route')
-const students = require('./students/route');
+const users = require('./routes/route_users')
+const students = require('./routes/route_students');
 const utilities = require('./utilities/utilities')
 
 const auth = function(req, res, next) {
@@ -11,7 +12,7 @@ const auth = function(req, res, next) {
     if(exceptions.indexOf(req.url) >= 0) {
         next(); 
     } else {
-        utilities.checkToken(req.headers.authorization, (result) => {
+        utilities.validateToken(req.headers.authorization, (result) => {
             if(result) {
                 next(); 
             } else {
