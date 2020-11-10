@@ -9,6 +9,7 @@ const generateToken = (user_info, callback) => {
 }
 
 const validateToken = (token, callback) => {
+    if(!token) {return callback(false)}
     let secret = process.env.SECRET; 
     jwt.verify(token.replace('Bearer ', ''), secret, function(error, decoded) {
         if(error) {
