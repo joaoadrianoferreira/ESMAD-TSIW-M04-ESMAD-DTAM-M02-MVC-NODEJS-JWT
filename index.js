@@ -8,7 +8,7 @@ const students = require('./routes/route_students');
 const utilities = require('./utilities/utilities')
 
 const auth = function(req, res, next) {
-    let exceptions = ['/login']; 
+    let exceptions = ['/login', '/register']; 
     if(exceptions.indexOf(req.url) >= 0) {
         next(); 
     } else {
