@@ -1,3 +1,9 @@
+/**
+ * @typedef Student
+ * @property {string} name.required
+ * @property {integer} age.required
+ */
+
 const mongoose = require('mongoose');
 
 const studentSchema = new mongoose.Schema({

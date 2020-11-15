@@ -7,8 +7,13 @@ const users = require('./routes/route_users')
 const students = require('./routes/route_students');
 const utilities = require('./utilities/utilities')
 
+// Swagger
+const expressSwagger = require('express-swagger-generator')(app); 
+const options = require('./swagger_conf'); 
+expressSwagger(options); 
+
 const auth = function(req, res, next) {
-    let exceptions = ['/login', '/register']; 
+    let exceptions = ['/login', '/register', '/api-docs']; 
     if(exceptions.indexOf(req.url) >= 0) {
         next(); 
     } else {

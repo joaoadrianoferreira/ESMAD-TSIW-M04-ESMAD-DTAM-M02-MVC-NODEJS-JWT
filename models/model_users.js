@@ -1,3 +1,9 @@
+/**
+ * @typedef User
+ * @property {string} username.required
+ * @property {string} password.required
+ */
+
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
