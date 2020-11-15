@@ -35,7 +35,7 @@
             }
         },
         "securitySchemes": {
-            "bearerAuth": {
+            "bearer": {
                 "type": "http",
                 "scheme": "bearer",
                 "bearerFormat": "JWT"
@@ -110,9 +110,9 @@
                         }
                     }
                 },
-                "security": {
-                    "bearerAuth": []
-                }
+                "security": [{
+                    "bearer": []
+                }]
             },    
             "post": {
                 "description": "Create Student",
@@ -188,7 +188,10 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [{
+                    "bearer": []
+                }]
             }
         },
         "/students/{name}": {
@@ -258,7 +261,10 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [{
+                    "bearer": []
+                }]
             }
         },
         "/login": {
